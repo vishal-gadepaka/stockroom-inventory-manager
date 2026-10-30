@@ -1,0 +1,6 @@
+stockroom.sqlite3
+stockroom.sqlite3-shm
+stockroom.sqlite3-wal
+.env
+.bundle/
+vendor/bundle/

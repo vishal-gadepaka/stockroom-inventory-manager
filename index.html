@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="Stockroom inventory, orders and warehouse management.">
+  <title>Stockroom — Inventory, made clear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="Stockroom home">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+        <span>stockroom<span class="brand-period">.</span></span>
+      </a>
+      <div class="workspace-switcher">
+        <div class="workspace-avatar">S</div>
+        <div class="workspace-copy"><strong>Studio Supply Co.</strong><span>Workspace</span></div>
+        <span class="switch-chevron">⌄</span>
+      </div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#overview" data-page="overview" class="nav-item active"><span class="nav-icon" data-icon="grid"></span><span>Overview</span></a>
+        <a href="#orders" data-page="orders" class="nav-item"><span class="nav-icon" data-icon="bag"></span><span>Orders</span><span class="nav-count" id="order-nav-count">—</span></a>
+        <a href="#inventory" data-page="inventory" class="nav-item admin-only"><span class="nav-icon" data-icon="boxes"></span><span>Inventory</span></a>
+        <a href="#products" data-page="products" class="nav-item"><span class="nav-icon" data-icon="tag"></span><span>Products</span></a>
+        <a href="#warehouses" data-page="warehouses" class="nav-item admin-only"><span class="nav-icon" data-icon="warehouse"></span><span>Warehouses</span></a>
+        <a href="#customers" data-page="customers" class="nav-item admin-only"><span class="nav-icon" data-icon="people"></span><span>Customers</span></a>
+        <a href="#reports" data-page="reports" class="nav-item admin-only"><span class="nav-icon" data-icon="chart"></span><span>Reports</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help"><div class="help-orbit">?</div><div><strong>Need a hand?</strong><span>Visit our help center</span></div><span class="external-arrow">↗</span></div>
+        <button class="sidebar-profile" id="sidebar-profile" type="button">
+          <span class="avatar avatar-sidebar">OR</span><span class="profile-copy"><strong id="sidebar-name">Olivia Rhye</strong><small id="sidebar-role">Admin</small></span><span class="more-dots">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Toggle navigation"><span data-icon="menu"></span></button>
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box"><span data-icon="search"></span><input id="global-search" type="search" placeholder="Search anything..." aria-label="Search"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notification-button" aria-label="Notifications"><span data-icon="bell"></span><i></i></button>
+          <span class="topbar-divider"></span>
+          <button class="role-switch" id="role-switch" type="button" data-action="role-switch" aria-label="Switch role"><span class="role-indicator"></span><span id="role-switch-label">Admin</span><span class="role-caret">⌄</span></button>
+          <button class="avatar top-avatar" id="top-avatar" aria-label="Current user">OR</button>
+        </div>
+      </header>
+
+      <section class="page-content" id="page-content" aria-live="polite">
+        <div class="loading-state"><span class="loading-spinner"></span>Getting your workspace ready…</div>
+      </section>
+      <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+      <div id="modal-root"></div>
+    </main>
+  </div>
+</body>
+</html>
